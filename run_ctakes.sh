@@ -53,7 +53,7 @@ do
 	shift
 done
 
-if [ $INPUT == "" ] || [ $OUTPUT == "" ] || [ $UMLS_USER == "" ] || [ $UMLS_PASS == "" ]
+if [ "$INPUT" == "" ] || [ "$OUTPUT" == "" ] || [ "$UMLS_USER" == "" ] || [ "$UMLS_PASS" == "" ]
 then
         usage
 fi
