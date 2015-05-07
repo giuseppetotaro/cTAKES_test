@@ -62,6 +62,12 @@ UMLS_USER="-Dctakes.umlsuser=${UMLS_USER}"
 UMLS_PASS="-Dctakes.umlspw=${UMLS_PASS}"
 [[ $CTAKES_HOME == "" ]] && CTAKES_HOME=/usr/local/apache-ctakes-3.2.1
 
+if [ ! -d ${CTAKES_HOME}/desc/ctakes-clinical-pipeline ]
+then
+	echo "Error: ${CTAKES_HOME}/desc/ctakes-clinical-pipeline does not exist!"
+	exit 1
+fi
+
 JARS=($(find ${CTAKES_HOME}/lib -iname "*.jar" -type f))
 SAVE_IFS=$IFS
 IFS=$":"
