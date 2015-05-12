@@ -77,7 +77,7 @@ IFS=$SAVE_IFS
 current_dir=$PWD
 cd $CTAKES_HOME/desc/ctakes-clinical-pipeline
 
-java -Dctakes.umlsuser=gostep -Dctakes.umlspw=Mazza31av -cp $CTAKES_HOME/desc/:$CTAKES_HOME/resources/:$JOIN -Dlog4j.configuration=file:$CTAKES_HOME/config/log4j.xml -Xms512M -Xmx3g org.apache.ctakes.clinicalpipeline.runtime.BagOfCUIsGenerator ${INPUT} ${OUTPUT}
+java -Dctakes.umlsuser=${UMLS_USER} -Dctakes.umlspw=${UMLS_PASS} -cp $CTAKES_HOME/desc/:$CTAKES_HOME/resources/:$JOIN -Dlog4j.configuration=file:$CTAKES_HOME/config/log4j.xml -Xms512M -Xmx3g org.apache.ctakes.clinicalpipeline.runtime.BagOfCUIsGenerator ${INPUT} ${OUTPUT}
 
 cd $current_dir
 
